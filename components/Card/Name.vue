@@ -4,12 +4,18 @@ interface NameCardProps {
 }
 
 const props = defineProps<NameCardProps>();
+
+const emits = defineEmits(["delete-name"]);
+
+const handleDelete = (name: string) => {
+  emits("delete-name", name);
+};
 </script>
 
 <template>
   <div class="card" v-for="name in resultName" :key="name">
     <h4>{{ name }}</h4>
-    <p>x</p>
+    <p @click="handleDelete(name)">x</p>
   </div>
 </template>
 

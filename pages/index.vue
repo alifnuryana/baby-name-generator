@@ -17,6 +17,10 @@ const options = reactive<OptionsState>({
 // Names State
 const resultName = ref<string[]>([]);
 
+const handleDeleteName = (name: string) => {
+  resultName.value = resultName.value.filter((n) => n !== name);
+};
+
 const computeResultNames = () => {
   const filteredNames = names
     .filter((name) => name.gender === options.gender)
@@ -62,11 +66,7 @@ const optionsArray = [
       <button class="primary" @click="computeResultNames">Find Names</button>
     </div>
     <div class="cards-container">
-      <CardName :resultName="resultName" />
-      <!-- <div class="card" v-for="name in resultName" :key="name">
-        <h4>{{ name }}</h4>
-        <p>x</p>
-      </div> -->
+      <CardName :resultName="resultName" @delete-name="handleDeleteName" />
     </div>
   </section>
 </template>
@@ -103,28 +103,5 @@ h1 {
   justify-content: center;
   margin-top: 3rem;
   flex-wrap: wrap;
-}
-
-.card {
-  background-color: rgb(27, 60, 138);
-  width: 28%;
-  color: white;
-  border-radius: 1rem;
-  padding: 0.1rem;
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.card p {
-  position: absolute;
-  width: 1.2rem;
-  text-align: center;
-  border-radius: 50%;
-  top: -32%;
-  left: 92.5%;
-  cursor: pointer;
-  color: rgb(27, 60, 138);
-  background-color: rgb(249, 87, 89);
 }
 </style>
