@@ -1,38 +1,21 @@
 <script setup lang="ts">
-enum Gender {
-  GIRL = "Girl",
-  BOY = "Boy",
-  UNISEX = "Unisex",
-}
-
-enum Populatiry {
-  UNIQUE = "Unique",
-  TRENDY = "Trendy",
-}
-
-enum Length {
-  SHORT = "Short",
-  ALL = "All",
-  LONG = "Long",
-}
+import { Popularity, Gender, Length, names } from "@/data/data";
 
 interface OptionsState {
   gender: Gender;
-  popularity: Populatiry;
+  popularity: Popularity;
   length: Length;
 }
 
-// const optionsObject: OptionsState = {
-//   gender: Gender.UNISEX,
-//   popularity: Populatiry.UNIQUE,
-//   length: Length.ALL,
-// };
-
+// Option State
 const options = reactive<OptionsState>({
   gender: Gender.UNISEX,
-  popularity: Populatiry.UNIQUE,
+  popularity: Popularity.UNIQUE,
   length: Length.ALL,
 });
+
+// Names State
+const names = ref<string[]>([]);
 </script>
 
 <template>
@@ -72,18 +55,18 @@ const options = reactive<OptionsState>({
           <button
             class="option option-left"
             :class="{
-              'option-active': options.popularity === Populatiry.TRENDY,
+              'option-active': options.popularity === Popularity.TRENDY,
             }"
-            @click="options.popularity = Populatiry.TRENDY"
+            @click="options.popularity = Popularity.TRENDY"
           >
             Trendy
           </button>
           <button
             class="option option-right"
             :class="{
-              'option-active': options.popularity === Populatiry.UNIQUE,
+              'option-active': options.popularity === Popularity.UNIQUE,
             }"
-            @click="options.popularity = Populatiry.UNIQUE"
+            @click="options.popularity = Popularity.UNIQUE"
           >
             Unique
           </button>

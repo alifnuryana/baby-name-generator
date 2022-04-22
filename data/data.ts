@@ -1,3 +1,5 @@
+import { Gender, Popularity, Length } from "@/data";
+
 interface Name {
   id: number;
   name: string;
