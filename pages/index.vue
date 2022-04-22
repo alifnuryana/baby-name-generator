@@ -46,18 +46,21 @@ const options = reactive<OptionsState>({
           <button
             class="option option-left"
             :class="{ 'option-active': options.gender === Gender.BOY }"
+            @click="options.gender = Gender.BOY"
           >
             Boy
           </button>
           <button
             class="option"
             :class="{ 'option-active': options.gender === Gender.UNISEX }"
+            @click="options.gender = Gender.UNISEX"
           >
             Unisex
           </button>
           <button
             class="option option-right"
             :class="{ 'option-active': options.gender === Gender.GIRL }"
+            @click="options.gender = Gender.GIRL"
           >
             Girl
           </button>
@@ -71,6 +74,7 @@ const options = reactive<OptionsState>({
             :class="{
               'option-active': options.popularity === Populatiry.TRENDY,
             }"
+            @click="options.popularity = Populatiry.TRENDY"
           >
             Trendy
           </button>
@@ -79,6 +83,7 @@ const options = reactive<OptionsState>({
             :class="{
               'option-active': options.popularity === Populatiry.UNIQUE,
             }"
+            @click="options.popularity = Populatiry.UNIQUE"
           >
             Unique
           </button>
@@ -90,18 +95,21 @@ const options = reactive<OptionsState>({
           <button
             class="option option-left"
             :class="{ 'option-active': options.length === Length.LONG }"
+            @click="options.length = Length.LONG"
           >
             Long
           </button>
           <button
             class="option"
             :class="{ 'option-active': options.length === Length.ALL }"
+            @click="options.length = Length.ALL"
           >
             All
           </button>
           <button
             class="option option-right"
             :class="{ 'option-active': options.length === Length.SHORT }"
+            @click="options.length = Length.SHORT"
           >
             Short
           </button>
