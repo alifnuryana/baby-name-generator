@@ -62,10 +62,11 @@ const optionsArray = [
       <button class="primary" @click="computeResultNames">Find Names</button>
     </div>
     <div class="cards-container">
-      <div class="card" v-for="name in resultName" :key="name">
+      <CardName :resultName="resultName" />
+      <!-- <div class="card" v-for="name in resultName" :key="name">
         <h4>{{ name }}</h4>
         <p>x</p>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
