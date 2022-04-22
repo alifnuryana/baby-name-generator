@@ -115,6 +115,7 @@ const options = reactive<OptionsState>({
           </button>
         </div>
       </div>
+      <button class="primary">Find Names</button>
     </div>
   </section>
 </template>
@@ -128,6 +129,7 @@ h1 {
   background-color: rgb(255, 238, 236);
   border-radius: 2rem;
   padding: 1rem;
+  padding-bottom: 2rem;
   width: 95%;
   margin: 0 auto;
   margin-top: 4rem;
@@ -162,5 +164,16 @@ h1 {
 .option-active {
   background-color: rgb(249, 87, 89);
   color: white;
+}
+
+.primary {
+  background-color: rgb(249, 87, 89);
+  color: white;
+  border-radius: 6.5rem;
+  border: none;
+  padding: 0.75rem 4rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 </style>
